@@ -18,12 +18,13 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#products">Mobiles</a></li>
                 <li><a href="#products">Laptops</a></li>
-                <li><a href="#products">Audio & Speakers</a></li>
+                <li><a href="#products">Audio</a></li>
                 <li><a href="#products">Gaming</a></li>
             </ul>
             <div class="nav-icons">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-regular fa-user"></i>
+                <!-- Cart Click Event -->
                 <div class="cart-icon" id="cartBtn">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="cart-count" id="cartCount">0</span>
@@ -100,10 +101,10 @@
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=400" alt="Bluetooth Speaker">
                     </div>
-                    <h3>JBL Portable Bluetooth Speaker</h3>
+                    <h3>JBL Portable Speaker</h3>
                     <p class="category">Bass Boost & Waterproof</p>
                     <p class="price">₹9,999</p>
-                    <button class="btn-add-cart" onclick="addToCart('JBL Portable Bluetooth Speaker', 9999)">Add To Cart</button>
+                    <button class="btn-add-cart" onclick="addToCart('JBL Portable Speaker', 9999)">Add To Cart</button>
                 </div>
 
                 <!-- Product 3 -->
@@ -111,10 +112,10 @@
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400" alt="iPhone 15 Pro Max">
                     </div>
-                    <h3>iPhone 15 Pro Max (256GB)</h3>
+                    <h3>iPhone 15 Pro Max</h3>
                     <p class="category">Apple Flagship</p>
                     <p class="price">₹1,48,900</p>
-                    <button class="btn-add-cart" onclick="addToCart('iPhone 15 Pro Max (256GB)', 148900)">Add To Cart</button>
+                    <button class="btn-add-cart" onclick="addToCart('iPhone 15 Pro Max', 148900)">Add To Cart</button>
                 </div>
 
                 <!-- Product 4 -->
@@ -122,10 +123,10 @@
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400" alt="Gaming Laptop">
                     </div>
-                    <h3>Asus ROG Gaming Laptop</h3>
+                    <h3>Asus ROG Laptop</h3>
                     <p class="category">RTX 4080 | 32GB RAM</p>
                     <p class="price">₹1,84,990</p>
-                    <button class="btn-add-cart" onclick="addToCart('Asus ROG Gaming Laptop', 184990)">Add To Cart</button>
+                    <button class="btn-add-cart" onclick="addToCart('Asus ROG Laptop', 184990)">Add To Cart</button>
                 </div>
 
                 <!-- Product 5 -->
@@ -133,10 +134,10 @@
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400" alt="Samsung S24 Ultra">
                     </div>
-                    <h3>Samsung Galaxy S21 5G</h3>
+                    <h3>Samsung S24 Ultra</h3>
                     <p class="category">5G Smartphone</p>
                     <p class="price">₹1,29,999</p>
-                    <button class="btn-add-cart" onclick="addToCart('Samsung Galaxy S21 5G', 129999)">Add To Cart</button>
+                    <button class="btn-add-cart" onclick="addToCart('Samsung S24 Ultra', 129999)">Add To Cart</button>
                 </div>
 
                 <!-- Product 6 -->
@@ -166,17 +167,17 @@
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400" alt="Mechanical Keyboard">
                     </div>
-                    <h3>Keyboard</h3>
+                    <h3>Mechanical Keyboard</h3>
                     <p class="category">Gaming Accessories</p>
                     <p class="price">₹6,499</p>
-                    <button class="btn-add-cart" onclick="addToCart('Keyboard', 6499)">Add To Cart</button>
+                    <button class="btn-add-cart" onclick="addToCart('Mechanical Keyboard', 6499)">Add To Cart</button>
                 </div>
 
             </div>
         </section>
     </main>
 
-    <!-- Cart Drawer Modal -->
+    <!-- Side Cart Drawer Modal -->
     <div class="cart-drawer" id="cartDrawer">
         <div class="cart-header">
             <h3>Your Dark Cart</h3>
@@ -202,11 +203,20 @@
         <p>&copy; 2026 TechVault Dark Edition. All Rights Reserved.</p>
     </footer>
 
-    <!-- Injected Functional Script -->
+    <!-- Working Toggle & Add/Remove Logic -->
     <script>
         let cartItems = [];
 
-        // Add Product to Cart Function
+        function openCart() {
+            document.getElementById('cartDrawer').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        function closeCart() {
+            document.getElementById('cartDrawer').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+
         function addToCart(title, price) {
             const existingIndex = cartItems.findIndex(item => item.title === title);
             
@@ -217,29 +227,24 @@
             }
 
             renderCart();
-            // Automatically open drawer on add
-            document.getElementById('cartDrawer').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
+            openCart();
         }
 
-        // Remove Product Function
         function removeFromCart(index) {
             cartItems.splice(index, 1);
             renderCart();
         }
 
-        // Render & Update UI Function
         function renderCart() {
             const container = document.getElementById('cartItemsContainer');
             const totalElement = document.getElementById('cartTotal');
             const countElement = document.getElementById('cartCount');
 
-            // Calculate total quantity
             const totalQty = cartItems.reduce((acc, item) => acc + item.qty, 0);
             countElement.innerText = totalQty;
 
             if (cartItems.length === 0) {
-                container.innerHTML = '<p class="empty-msg">Your cart is empty!</p>';
+                container.innerHTML = '<p class="empty-msg" style="color:#a0a0b0; text-align:center; margin-top:40px;">Your cart is empty!</p>';
                 totalElement.innerText = '₹0';
                 return;
             }
@@ -257,7 +262,7 @@
                             <div class="cart-item-title">${item.title}</div>
                             <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')} x ${item.qty}</div>
                         </div>
-                        <i class="fa-solid fa-trash remove-icon" onclick="removeFromCart(${index})"></i>
+                        <i class="fa-solid fa-trash remove-icon" style="cursor:pointer;" onclick="removeFromCart(${index})"></i>
                     </div>
                 `;
             });
@@ -266,21 +271,9 @@
             totalElement.innerText = '₹' + grandTotal.toLocaleString('en-IN');
         }
 
-        // Open/Close Drawer Handlers
-        document.getElementById('cartBtn').onclick = () => {
-            document.getElementById('cartDrawer').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
-        };
-
-        document.getElementById('closeCart').onclick = () => {
-            document.getElementById('cartDrawer').classList.remove('active');
-            document.getElementById('overlay').classList.remove('active');
-        };
-
-        document.getElementById('overlay').onclick = () => {
-            document.getElementById('cartDrawer').classList.remove('active');
-            document.getElementById('overlay').classList.remove('active');
-        };
+        document.getElementById('cartBtn').addEventListener('click', openCart);
+        document.getElementById('closeCart').addEventListener('click', closeCart);
+        document.getElementById('overlay').addEventListener('click', closeCart);
     </script>
 
 </body>
