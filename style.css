@@ -1,4 +1,4 @@
-/* Color Palette Variables - Sleek Dark Theme */
+/* Color Palette Variables */
 :root {
     --bg-dark: #121214;
     --card-bg: #1e1e24;
@@ -24,6 +24,7 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     overflow-x: hidden;
+    width: 100%;
 }
 
 /* Navbar */
@@ -31,7 +32,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 6%;
+    padding: 1.2rem 5%;
     background: #18181c;
     border-bottom: 1px solid var(--border-color);
     position: sticky;
@@ -40,7 +41,7 @@ body {
 }
 
 .logo {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary-color);
 }
@@ -52,7 +53,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav-links a {
@@ -69,10 +70,9 @@ body {
 .nav-icons {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
     font-size: 1.2rem;
     color: var(--text-main);
-    cursor: pointer;
 }
 
 .cart-icon {
@@ -86,7 +86,7 @@ body {
     right: -10px;
     background-color: var(--accent-badge);
     color: #fff;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     padding: 2px 6px;
     border-radius: 50%;
     font-weight: bold;
@@ -97,7 +97,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3.5rem 8%;
+    padding: 3rem 6%;
     background: radial-gradient(circle at top left, #231d35 0%, var(--bg-dark) 70%);
 }
 
@@ -113,32 +113,26 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 2.5rem;
-    margin: 12px 0;
+    font-size: 2.2rem;
+    margin: 10px 0;
     line-height: 1.2;
     color: #ffffff;
 }
 
 .hero-text p {
     color: var(--text-muted);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 10px 24px;
     background-color: var(--primary-color);
     color: #121214;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 700;
-    box-shadow: 0 4px 15px rgba(187, 134, 252, 0.3);
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-2px);
 }
 
 .hero-image {
@@ -146,8 +140,8 @@ body {
 }
 
 .hero-image img {
-    width: 300px;
-    height: 300px;
+    width: 260px;
+    height: 260px;
     object-fit: cover;
     border-radius: 16px;
     border: 1px solid var(--border-color);
@@ -159,9 +153,9 @@ body {
     right: -10px;
     background: var(--accent-badge);
     color: #fff;
-    padding: 14px 10px;
+    padding: 10px;
     border-radius: 50%;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
@@ -170,8 +164,8 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 2rem 5%;
+    gap: 15px;
+    padding: 1.5rem 4%;
     background: #18181c;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
@@ -180,99 +174,99 @@ body {
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .feature-item i {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--accent-color);
 }
 
-.feature-item h4 {
-    font-size: 0.95rem;
-}
-
-.feature-item p {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
-/* Product Section */
+/* Products Section - Fixed Centering & Grid */
 .products {
-    padding: 3.5rem 8%;
-    text-align: center;
+    padding: 2.5rem 4%;
+    width: 100%;
 }
 
 .products h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.8rem;
     color: #ffffff;
+    text-align: center;
 }
 
+/* Desktop & Tablet Grid */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .product-card {
     background: var(--card-bg);
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px;
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    background: var(--card-hover);
-    border-color: var(--primary-color);
+    text-align: center;
+    width: 100%;
 }
 
 .img-box {
     width: 100%;
-    height: 180px;
-    margin-bottom: 15px;
+    height: 160px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #16161a;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .product-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+    object-fit: contain; /* Ensures iPhone & Samsung images fit without cutting */
+    padding: 5px;
 }
 
 .product-card h3 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     margin-bottom: 4px;
     color: #fff;
+    line-height: 1.3;
 }
 
 .product-card .category {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
     margin-bottom: 8px;
 }
 
 .product-card .price {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--accent-color);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .btn-add-cart {
     background-color: var(--primary-color);
     color: #121214;
     border: none;
-    padding: 10px 18px;
+    padding: 10px;
     border-radius: 6px;
     cursor: pointer;
     width: 100%;
     font-weight: 700;
+    font-size: 0.85rem;
     transition: background-color 0.2s ease;
 }
 
@@ -285,7 +279,7 @@ body {
     position: fixed;
     top: 0;
     right: -450px;
-    width: 350px;
+    width: 320px;
     max-width: 85vw;
     height: 100%;
     background: #18181c;
@@ -302,7 +296,7 @@ body {
 }
 
 .cart-header {
-    padding: 20px;
+    padding: 18px;
     background: #231d35;
     color: white;
     display: flex;
@@ -318,7 +312,7 @@ body {
 }
 
 .cart-body {
-    padding: 20px;
+    padding: 15px;
     flex: 1;
     overflow-y: auto;
 }
@@ -327,13 +321,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
 }
 
 .cart-item-title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: #fff;
 }
@@ -341,16 +335,16 @@ body {
 .cart-item-price {
     color: var(--accent-color);
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 .remove-icon {
     color: var(--accent-badge);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .cart-footer {
-    padding: 20px;
+    padding: 18px;
     border-top: 1px solid var(--border-color);
     background: #121214;
 }
@@ -359,14 +353,14 @@ body {
     display: flex;
     justify-content: space-between;
     font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    margin-bottom: 12px;
     color: #fff;
 }
 
 .checkout-btn {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background: var(--accent-color);
     color: #121214;
     border: none;
@@ -392,102 +386,83 @@ body {
 
 footer {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     background: #0c0c0e;
     color: var(--text-muted);
+    font-size: 0.85rem;
     border-top: 1px solid var(--border-color);
 }
 
 /* ========================================================
-   MOBILE & TABLET RESPONSIVE MEDIA QUERIES (FIX FOR MOBILE)
+   MOBILE FIX: PERFECT 2-COLUMN GRID FOR IPHONE & SAMSUNG
    ======================================================== */
 
-@media (max-width: 768px) {
-    /* Navbar Adjustment */
-    .navbar {
-        padding: 1rem 4%;
-    }
-
+@media (max-width: 600px) {
     .nav-links {
-        display: none; /* Hide top links on mobile for clean look */
+        display: none;
     }
 
-    .logo {
-        font-size: 1.3rem;
-    }
-
-    /* Hero Section Responsive */
     .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding: 2.5rem 5%;
-        gap: 25px;
+        padding: 2rem 4%;
     }
 
     .hero-text h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-text p {
-        font-size: 0.9rem;
+        font-size: 1.6rem;
     }
 
     .hero-image img {
-        width: 220px;
-        height: 220px;
+        width: 180px;
+        height: 180px;
     }
 
-    /* Features Grid for Mobile */
-    .features {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 1.5rem 4%;
-    }
-
-    .feature-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-    }
-
-    /* Products Grid for Mobile */
     .products {
-        padding: 2.5rem 4%;
+        padding: 1.5rem 3%;
     }
 
     .products h2 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
     }
 
+    /* Clean 2-Column Mobile Grid */
     .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .product-card {
-        padding: 12px;
+        padding: 10px;
+        border-radius: 10px;
     }
 
     .img-box {
-        height: 130px;
+        height: 120px;
+        margin-bottom: 8px;
     }
 
     .product-card h3 {
-        font-size: 0.95rem;
+        font-size: 0.82rem;
+        min-height: 2.4em; /* Standardizes card heights */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .product-card .category {
+        font-size: 0.68rem;
+        margin-bottom: 5px;
     }
 
     .product-card .price {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
     }
 
     .btn-add-cart {
-        padding: 8px;
-        font-size: 0.85rem;
-    }
-
-    /* Side Cart Drawer Full Mobile Fitting */
-    .cart-drawer {
-        width: 300px;
+        padding: 8px 4px;
+        font-size: 0.78rem;
     }
 }
