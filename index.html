@@ -3,116 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechVault Dark - Premium Electronics</title>
+    <title>TechVault Dark - Pure HTML & CSS</title>
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header / Navbar -->
+    <!-- CSS Hidden Radio Controls for Pure CSS Tab Switching -->
+    <input type="radio" name="tab" id="tab-home" checked class="tab-control">
+    <input type="radio" name="tab" id="tab-mobiles" class="tab-control">
+    <input type="radio" name="tab" id="tab-laptops" class="tab-control">
+    <input type="radio" name="tab" id="tab-audio" class="tab-control">
+    <input type="radio" name="tab" id="tab-gaming" class="tab-control">
+    <input type="checkbox" id="mobile-toggle" class="menu-control">
+
+    <!-- FIXED NAVBAR -->
     <header>
         <nav class="navbar">
             <div class="logo-box">
-                <!-- Mobile Menu Button -->
-                <i class="fa-solid fa-bars mobile-menu-btn" id="mobileMenuBtn"></i>
-                <div class="logo">Tech<span class="highlight">Vault</span></div>
+                <label for="mobile-toggle" class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <label for="tab-home" class="logo">Tech<span class="highlight">Vault</span></label>
             </div>
             
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#">Home</a></li>
-                <li><a href="#products">Mobiles</a></li>
-                <li><a href="#products">Laptops</a></li>
-                <li><a href="#products">Audio</a></li>
-                <li><a href="#products">Gaming</a></li>
+            <ul class="nav-links">
+                <li><label for="tab-home" class="nav-item item-home">Home</label></li>
+                <li><label for="tab-mobiles" class="nav-item item-mobiles">Mobiles</label></li>
+                <li><label for="tab-laptops" class="nav-item item-laptops">Laptops</label></li>
+                <li><label for="tab-audio" class="nav-item item-audio">Audio</label></li>
+                <li><label for="tab-gaming" class="nav-item item-gaming">Gaming</label></li>
             </ul>
             
             <div class="nav-icons">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-regular fa-user"></i>
-                <div class="cart-icon" id="cartBtn">
+                <a href="#cartDrawer" class="cart-icon">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </div>
+                    <span class="cart-count">2</span>
+                </a>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-text">
-                <span class="tag">DARK EDITION SALE</span>
-                <h1>Next-Gen Tech, Pure Performance.</h1>
-                <p>Explore high-fidelity audio, wireless earbuds, gaming gear, and flagship smartphones at unmatched prices.</p>
-                <a href="#products" class="btn">Explore Products</a>
-            </div>
-            <div class="hero-image">
-                <span class="badge-discount">30% OFF</span>
-                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500" alt="AirPods Pro">
-            </div>
-        </section>
+        <!-- HOME SECTION -->
+        <div class="page-section section-home">
+            <section class="hero">
+                <div class="hero-text">
+                    <span class="tag">DARK EDITION SALE</span>
+                    <h1>Next-Gen Tech, Pure Performance.</h1>
+                    <p>Explore high-fidelity audio, laptops, and flagship smartphones at unmatched prices.</p>
+                    <label for="tab-mobiles" class="btn">Explore Mobiles</label>
+                </div>
+                <div class="hero-image">
+                    <span class="badge-discount">30% OFF</span>
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500" alt="AirPods Pro">
+                </div>
+            </section>
 
-        <!-- Features Banner -->
-        <section class="features">
-            <div class="feature-item">
-                <i class="fa-solid fa-truck-fast"></i>
-                <div>
-                    <h4>Fast Shipping</h4>
-                    <p>Free delivery on ₹1,999+</p>
+            <section class="features">
+                <div class="feature-item">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <div>
+                        <h4>Fast Shipping</h4>
+                        <p>Free delivery on ₹1,999+</p>
+                    </div>
                 </div>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-shield-halved"></i>
-                <div>
-                    <h4>100% Genuine</h4>
-                    <p>Official Brand Warranty</p>
+                <div class="feature-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <h4>100% Genuine</h4>
+                        <p>Official Brand Warranty</p>
+                    </div>
                 </div>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-bolt"></i>
-                <div>
-                    <h4>Flash Deals</h4>
-                    <p>Updated daily</p>
+                <div class="feature-item">
+                    <i class="fa-solid fa-bolt"></i>
+                    <div>
+                        <h4>Flash Deals</h4>
+                        <p>Updated daily</p>
+                    </div>
                 </div>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-headset"></i>
-                <div>
-                    <h4>24/7 Support</h4>
-                    <p>Instant tech assistance</p>
+                <div class="feature-item">
+                    <i class="fa-solid fa-headset"></i>
+                    <div>
+                        <h4>24/7 Support</h4>
+                        <p>Instant tech assistance</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
-        <!-- Products Section -->
-        <section class="products" id="products">
-            <h2>Featured Tech & Audio Products</h2>
+        <!-- MOBILES SECTION -->
+        <div class="page-section section-mobiles">
+            <h2 class="section-title">Smartphones</h2>
             <div class="product-grid">
-
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400" alt="Wireless Airbuds">
-                    </div>
-                    <h3>AirPods Pro / Airbuds</h3>
-                    <p class="category">Noise Cancelling Earbuds</p>
-                    <p class="price">₹19,900</p>
-                    <button class="btn-add-cart" onclick="addToCart('AirPods Pro / Airbuds', 19900)">Add To Cart</button>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=400" alt="Bluetooth Speaker">
-                    </div>
-                    <h3>JBL Portable Speaker</h3>
-                    <p class="category">Bass Boost & Waterproof</p>
-                    <p class="price">₹9,999</p>
-                    <button class="btn-add-cart" onclick="addToCart('JBL Portable Speaker', 9999)">Add To Cart</button>
-                </div>
-
-                <!-- Product 3 -->
                 <div class="product-card">
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=400" alt="iPhone 15 Pro Max">
@@ -120,21 +106,8 @@
                     <h3>iPhone 15 Pro Max</h3>
                     <p class="category">Apple Flagship</p>
                     <p class="price">₹1,48,900</p>
-                    <button class="btn-add-cart" onclick="addToCart('iPhone 15 Pro Max', 148900)">Add To Cart</button>
+                    <a href="#cartDrawer" class="btn-add-cart">Add To Cart</a>
                 </div>
-
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400" alt="Gaming Laptop">
-                    </div>
-                    <h3>Asus ROG Laptop</h3>
-                    <p class="category">RTX 4080 | 32GB RAM</p>
-                    <p class="price">₹1,84,990</p>
-                    <button class="btn-add-cart" onclick="addToCart('Asus ROG Laptop', 184990)">Add To Cart</button>
-                </div>
-
-                <!-- Product 5 -->
                 <div class="product-card">
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=400" alt="Samsung S24 Ultra">
@@ -142,10 +115,47 @@
                     <h3>Samsung S24 Ultra</h3>
                     <p class="category">5G Smartphone</p>
                     <p class="price">₹1,29,999</p>
-                    <button class="btn-add-cart" onclick="addToCart('Samsung S24 Ultra', 129999)">Add To Cart</button>
+                    <a href="#cartDrawer" class="btn-add-cart">Add To Cart</a>
                 </div>
+            </div>
+        </div>
 
-                <!-- Product 6 -->
+        <!-- LAPTOPS SECTION -->
+        <div class="page-section section-laptops">
+            <h2 class="section-title">Laptops</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="img-box">
+                        <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400" alt="Gaming Laptop">
+                    </div>
+                    <h3>Asus ROG Laptop</h3>
+                    <p class="category">RTX 4080 | 32GB RAM</p>
+                    <p class="price">₹1,84,990</p>
+                    <a href="#cartDrawer" class="btn-add-cart">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- AUDIO SECTION -->
+        <div class="page-section section-audio">
+            <h2 class="section-title">Audio & Sound Systems</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="img-box">
+                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400" alt="AirPods Pro">
+                    </div>
+                    <h3>AirPods Pro</h3>
+                    <p class="category">Noise Cancelling Earbuds</p>
+                    <p class="price">₹19,900</p>
+                    <a href="#cartDrawer" class="btn-add-cart">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- GAMING SECTION -->
+        <div class="page-section section-gaming">
+            <h2 class="section-title">Gaming Gear</h2>
+            <div class="product-grid">
                 <div class="product-card">
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=400" alt="PS5 Console">
@@ -153,140 +163,48 @@
                     <h3>PlayStation 5 Console</h3>
                     <p class="category">Sony Next-Gen Gaming</p>
                     <p class="price">₹54,990</p>
-                    <button class="btn-add-cart" onclick="addToCart('PlayStation 5 Console', 54990)">Add To Cart</button>
+                    <a href="#cartDrawer" class="btn-add-cart">Add To Cart</a>
                 </div>
-
-                <!-- Product 7 -->
-                <div class="product-card">
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Smart Watch">
-                    </div>
-                    <h3>Apple Watch Ultra 2</h3>
-                    <p class="category">Fitness & Cellular Watch</p>
-                    <p class="price">₹89,900</p>
-                    <button class="btn-add-cart" onclick="addToCart('Apple Watch Ultra 2', 89900)">Add To Cart</button>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="product-card">
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400" alt="Mechanical Keyboard">
-                    </div>
-                    <h3>Mechanical Keyboard</h3>
-                    <p class="category">Gaming Accessories</p>
-                    <p class="price">₹6,499</p>
-                    <button class="btn-add-cart" onclick="addToCart('Mechanical Keyboard', 6499)">Add To Cart</button>
-                </div>
-
             </div>
-        </section>
+        </div>
     </main>
 
-    <!-- Side Cart Drawer Modal -->
+    <!-- CSS-ONLY CART SIDEBAR (Uses CSS :target selector) -->
     <div class="cart-drawer" id="cartDrawer">
         <div class="cart-header">
             <h3>Your Dark Cart</h3>
-            <span class="close-btn" id="closeCart">&times;</span>
+            <a href="#" class="close-btn">&times;</a>
         </div>
-        <div class="cart-body" id="cartItemsContainer">
-            <p class="empty-msg" id="emptyMsg">Your cart is empty!</p>
+        <div class="cart-body">
+            <div class="cart-item">
+                <div>
+                    <div class="cart-item-title">AirPods Pro</div>
+                    <div class="cart-item-price">₹19,900 x 1</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div>
+                    <div class="cart-item-title">JBL Speaker</div>
+                    <div class="cart-item-price">₹9,999 x 1</div>
+                </div>
+            </div>
         </div>
         <div class="cart-footer">
             <div class="total-price">
                 <span>Total Amount:</span>
-                <span id="cartTotal">₹0</span>
+                <span>₹29,899</span>
             </div>
-            <button class="checkout-btn" onclick="alert('Proceeding to Checkout!')">Proceed to Checkout</button>
+            <button class="checkout-btn">Proceed to Checkout</button>
         </div>
     </div>
 
-    <!-- Overlay Background -->
-    <div class="overlay" id="overlay"></div>
+    <!-- Overlay Close Anchor -->
+    <a href="#" class="overlay"></a>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 TechVault Dark Edition. All Rights Reserved.</p>
     </footer>
-
-    <!-- Working Mobile Menu & Cart Script -->
-    <script>
-        let cartItems = [];
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuBtn.onclick = () => {
-            navLinks.classList.toggle('show');
-        };
-
-        // Cart Drawer Logic
-        function openCart() {
-            document.getElementById('cartDrawer').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
-        }
-
-        function closeCart() {
-            document.getElementById('cartDrawer').classList.remove('active');
-            document.getElementById('overlay').classList.remove('active');
-        }
-
-        function addToCart(title, price) {
-            const existingIndex = cartItems.findIndex(item => item.title === title);
-            if (existingIndex > -1) {
-                cartItems[existingIndex].qty += 1;
-            } else {
-                cartItems.push({ title: title, price: price, qty: 1 });
-            }
-            renderCart();
-            openCart();
-        }
-
-        function removeFromCart(index) {
-            cartItems.splice(index, 1);
-            renderCart();
-        }
-
-        function renderCart() {
-            const container = document.getElementById('cartItemsContainer');
-            const totalElement = document.getElementById('cartTotal');
-            const countElement = document.getElementById('cartCount');
-
-            const totalQty = cartItems.reduce((acc, item) => acc + item.qty, 0);
-            countElement.innerText = totalQty;
-
-            if (cartItems.length === 0) {
-                container.innerHTML = '<p class="empty-msg" style="color:#a0a0b0; text-align:center; margin-top:40px;">Your cart is empty!</p>';
-                totalElement.innerText = '₹0';
-                return;
-            }
-
-            let grandTotal = 0;
-            let cartHTML = '';
-
-            cartItems.forEach((item, index) => {
-                const itemTotal = item.price * item.qty;
-                grandTotal += itemTotal;
-
-                cartHTML += `
-                    <div class="cart-item">
-                        <div>
-                            <div class="cart-item-title">${item.title}</div>
-                            <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')} x ${item.qty}</div>
-                        </div>
-                        <i class="fa-solid fa-trash remove-icon" style="cursor:pointer;" onclick="removeFromCart(${index})"></i>
-                    </div>
-                `;
-            });
-
-            container.innerHTML = cartHTML;
-            totalElement.innerText = '₹' + grandTotal.toLocaleString('en-IN');
-        }
-
-        document.getElementById('cartBtn').addEventListener('click', openCart);
-        document.getElementById('closeCart').addEventListener('click', closeCart);
-        document.getElementById('overlay').addEventListener('click', closeCart);
-    </script>
 
 </body>
 </html>
